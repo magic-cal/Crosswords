@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <GridView android:layout_height="wrap_content" android:id="@+id/gridView1"
+        android:layout_width="match_parent" android:numColumns="3"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:nestedScrollingEnabled="true"></GridView>
+</RelativeLayout><!-- From: file:/D:/2.1.16/app/src/main/res/layout/activity_leaderboard.xml -->

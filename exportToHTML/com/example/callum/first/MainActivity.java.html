@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">com.example.callum.first; 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.Intent; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.util.Log; 
+</span><span class="s0">import </span><span class="s1">android.view.Menu; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.Button; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+ 
+</span><span class="s0">import <a href="../../../../com/example/callum/first/util/Globalclass.java.html">com.example.callum.first.util.Globalclass</a></span><span class="s1">; 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s0">implements </span><span class="s1">View.OnClickListener{ 
+ 
+    </span><span class="s0">private <a href="../../../../com/example/callum/first/util/Globalclass.java.html">Globalclass</a> </span><span class="s1">g1; 
+ 
+    { 
+        g1 = </span><span class="s0">new <a href="../../../../com/example/callum/first/util/Globalclass.java.html">Globalclass</a></span><span class="s1">(); 
+    } 
+ 
+ 
+    String image; 
+    Button play; 
+    TextView level; 
+    Button login; 
+    Boolean loggedIn; 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        play = (Button) findViewById(R.id.Play_button); 
+        play.setOnClickListener(</span><span class="s0">this</span><span class="s1">); 
+        level=(TextView)findViewById(R.id.level); 
+        level.setText(</span><span class="s2">&quot;Level: &quot;</span><span class="s1">+g1.getLevel()); 
+        login=(Button) findViewById(R.id.Login_Button); 
+        login.setOnClickListener(</span><span class="s0">this</span><span class="s1">); 
+        loggedIn = </span><span class="s0">true</span><span class="s1">; 
+        Log.w(</span><span class="s2">&quot;great&quot;</span><span class="s1">,</span><span class="s2">&quot;message&quot;</span><span class="s1">); 
+        </span><span class="s0">if </span><span class="s1">(loggedIn){ 
+            login.setHighlightColor(getResources().getColor(R.color.Green)); 
+        } 
+ 
+    } 
+ 
+ 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onCreateOptionsMenu(Menu menu) { 
+        </span><span class="s3">// Inflate the menu; this adds items to the action bar if it is present.</span><span class="s1"> 
+        getMenuInflater().inflate(R.menu.menu_main, menu); 
+ 
+        </span><span class="s0">return true</span><span class="s1">; 
+    } 
+    </span><span class="s3">//hello i am leo and i like this laptop</span><span class="s1"> 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) { 
+        </span><span class="s3">// Handle action bar item clicks here. The action bar will</span><span class="s1"> 
+        </span><span class="s3">// automatically handle clicks on the Home/Up button, so long</span><span class="s1"> 
+        </span><span class="s3">// as you specify a parent activity in AndroidManifest.xml.</span><span class="s1"> 
+        </span><span class="s0">int </span><span class="s1">id = item.getItemId(); 
+ 
+        </span><span class="s3">//noinspection SimplifiableIfStatement</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(id == R.id.action_settings) { 
+            level.setText(</span><span class="s2">&quot;boo&quot;</span><span class="s1">); 
+ 
+            </span><span class="s0">return true</span><span class="s1">; 
+ 
+        } 
+ 
+        </span><span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item); 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">PlayClick() { 
+        </span><span class="s0">if</span><span class="s1">(!loggedIn){ 
+            play.setTextColor(getResources().getColor(R.color.Red)); 
+            play.setText(</span><span class="s2">&quot;Please login first&quot;</span><span class="s1">); 
+ 
+        }</span><span class="s0">else </span><span class="s1">{ 
+            startActivity(</span><span class="s0">new </span><span class="s1">Intent(</span><span class="s2">&quot;android.intent.action.PLAY&quot;</span><span class="s1">)); 
+        } 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">LoginClick(){ 
+        play.setTextColor(getResources().getColor(R.color.Black)); 
+        play.setText(</span><span class="s2">&quot;Play&quot;</span><span class="s1">); 
+ 
+    } 
+</span><span class="s3">//leo wilson is the best but we dont have bus money......</span><span class="s1"> 
+ 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+        </span><span class="s0">switch </span><span class="s1">(v.getId()) { 
+ 
+            </span><span class="s0">case </span><span class="s1">R.id.Play_button: 
+                PlayClick(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s1">R.id.Login_Button: 
+                LoginClick(); 
+                </span><span class="s0">break</span><span class="s1">; 
+ 
+        } 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">newimage() { 
+        image = </span><span class="s2">&quot;hello&quot;</span><span class="s1">; 
+    } 
+ 
+}</span></pre>
+</body>
+</html>

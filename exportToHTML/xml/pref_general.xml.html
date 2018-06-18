@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>pref_general.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+.s1 { color: rgb(0,0,128); font-weight: bold; }
+.s2 { color: rgb(0,0,255); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+pref_general.xml</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;</span><span class="s1">PreferenceScreen </span><span class="s2">xmlns:android=</span><span class="s3">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="s0">&gt; 
+ 
+    &lt;</span><span class="s1">CheckBoxPreference</span><span class="s0"> 
+        </span><span class="s2">android:key=</span><span class="s3">&quot;example_checkbox&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;@string/pref_title_social_recommendations&quot;</span><span class="s0"> 
+        </span><span class="s2">android:summary=</span><span class="s3">&quot;@string/pref_description_social_recommendations&quot;</span><span class="s0"> 
+        </span><span class="s2">android:defaultValue=</span><span class="s3">&quot;true&quot; </span><span class="s0">/&gt; 
+ 
+    </span><span class="s4">&lt;!-- NOTE: EditTextPreference accepts EditText attributes. --&gt;</span><span class="s0"> 
+    </span><span class="s4">&lt;!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. --&gt;</span><span class="s0"> 
+    &lt;</span><span class="s1">EditTextPreference</span><span class="s0"> 
+        </span><span class="s2">android:key=</span><span class="s3">&quot;example_text&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;@string/pref_title_display_name&quot;</span><span class="s0"> 
+        </span><span class="s2">android:defaultValue=</span><span class="s3">&quot;@string/pref_default_display_name&quot;</span><span class="s0"> 
+        </span><span class="s2">android:selectAllOnFocus=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:inputType=</span><span class="s3">&quot;textCapWords&quot;</span><span class="s0"> 
+        </span><span class="s2">android:capitalize=</span><span class="s3">&quot;words&quot;</span><span class="s0"> 
+        </span><span class="s2">android:singleLine=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:maxLines=</span><span class="s3">&quot;1&quot; </span><span class="s0">/&gt; 
+ 
+    </span><span class="s4">&lt;!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to 
+         dismiss it. --&gt;</span><span class="s0"> 
+    </span><span class="s4">&lt;!-- NOTE: ListPreference's summary should be set to its value by the activity code. --&gt;</span><span class="s0"> 
+    &lt;</span><span class="s1">ListPreference</span><span class="s0"> 
+        </span><span class="s2">android:key=</span><span class="s3">&quot;example_list&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;@string/pref_title_add_friends_to_messages&quot;</span><span class="s0"> 
+        </span><span class="s2">android:defaultValue=</span><span class="s3">&quot;-1&quot;</span><span class="s0"> 
+        </span><span class="s2">android:entries=</span><span class="s3">&quot;@array/pref_example_list_titles&quot;</span><span class="s0"> 
+        </span><span class="s2">android:entryValues=</span><span class="s3">&quot;@array/pref_example_list_values&quot;</span><span class="s0"> 
+        </span><span class="s2">android:negativeButtonText=</span><span class="s3">&quot;@null&quot;</span><span class="s0"> 
+        </span><span class="s2">android:positiveButtonText=</span><span class="s3">&quot;@null&quot; </span><span class="s0">/&gt; 
+ 
+&lt;/</span><span class="s1">PreferenceScreen</span><span class="s0">&gt; 
+</span></pre>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/2.1.16/app/src/main/res/values-en/strings.xml -->
+    <eat-comment/>
+    <string name="Correct">Correct</string>
+    <string name="Description_Text">The image guessing word game</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_submit">Submit</string>
+    <string name="app_name">first</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="title_activity_back">Back</string>
+    <string name="title_activity_correct">Correct</string>
+    <string name="title_activity_play">Play</string>
+    <string name="title_activity_right">Right</string>
+</resources>

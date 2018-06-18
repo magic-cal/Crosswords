@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Globalclass.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,0,255); }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Globalclass.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">com.example.callum.first.util; 
+ 
+</span><span class="s0">import </span><span class="s1">android.app.Application; 
+ 
+</span><span class="s2">/** 
+ * Created by callum on 9/5/15. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">Globalclass </span><span class="s0">extends </span><span class="s1">Application { 
+ 
+ 
+    </span><span class="s0">private </span><span class="s1">String answer; 
+    </span><span class="s0">private int </span><span class="s1">level=</span><span class="s3">1</span><span class="s1">; 
+    </span><span class="s0">private </span><span class="s1">String [] answers = </span><span class="s0">new </span><span class="s1">String[</span><span class="s3">11</span><span class="s1">]; 
+ 
+    </span><span class="s0">public void </span><span class="s1">setAnswers (){ 
+        answers[</span><span class="s3">1</span><span class="s1">]= </span><span class="s4">&quot;hello&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">2</span><span class="s1">]= </span><span class="s4">&quot;bee&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">3</span><span class="s1">]= </span><span class="s4">&quot;fish&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">4</span><span class="s1">]= </span><span class="s4">&quot;chips&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">5</span><span class="s1">]= </span><span class="s4">&quot;pi&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">6</span><span class="s1">]= </span><span class="s4">&quot;organ&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">7</span><span class="s1">]= </span><span class="s4">&quot;WARM&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">8</span><span class="s1">]= </span><span class="s4">&quot;TEA&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">9</span><span class="s1">]= </span><span class="s4">&quot;TIME&quot;</span><span class="s1">; 
+        answers[</span><span class="s3">10</span><span class="s1">]= </span><span class="s4">&quot;CAR&quot;</span><span class="s1">; 
+ 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">String getAnswer() { 
+        </span><span class="s0">return </span><span class="s1">answers[level]; 
+    } 
+</span><span class="s2">//    public void setAnswer(String aAnswer)</span><span class="s1"> 
+</span><span class="s2">//    {</span><span class="s1"> 
+</span><span class="s2">//        answer = aAnswer;</span><span class="s1"> 
+</span><span class="s2">//    }</span><span class="s1"> 
+ 
+    </span><span class="s0">public int </span><span class="s1">getLevel(){ 
+        </span><span class="s0">return </span><span class="s1">level; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setLevel(</span><span class="s0">int </span><span class="s1">aLevel) { 
+        level = aLevel; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">levelUp (){ 
+        level++; 
+        System.out.println(level); 
+    } 
+} 
+ 
+</span></pre>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>pref_notification.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+.s1 { color: rgb(0,0,128); font-weight: bold; }
+.s2 { color: rgb(0,0,255); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+pref_notification.xml</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;</span><span class="s1">PreferenceScreen </span><span class="s2">xmlns:android=</span><span class="s3">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="s0">&gt; 
+ 
+    </span><span class="s4">&lt;!-- A 'parent' preference, which enables/disables child preferences (below) 
+         when checked/unchecked. --&gt;</span><span class="s0"> 
+    &lt;</span><span class="s1">CheckBoxPreference</span><span class="s0"> 
+        </span><span class="s2">android:key=</span><span class="s3">&quot;notifications_new_message&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;@string/pref_title_new_message_notifications&quot;</span><span class="s0"> 
+        </span><span class="s2">android:defaultValue=</span><span class="s3">&quot;true&quot; </span><span class="s0">/&gt; 
+ 
+    </span><span class="s4">&lt;!-- Allows the user to choose a ringtone in the 'notification' category. --&gt;</span><span class="s0"> 
+    </span><span class="s4">&lt;!-- NOTE: This preference will be enabled only when the checkbox above is checked. --&gt;</span><span class="s0"> 
+    </span><span class="s4">&lt;!-- NOTE: RingtonePreference's summary should be set to its value by the activity code. --&gt;</span><span class="s0"> 
+    &lt;</span><span class="s1">RingtonePreference</span><span class="s0"> 
+        </span><span class="s2">android:dependency=</span><span class="s3">&quot;notifications_new_message&quot;</span><span class="s0"> 
+        </span><span class="s2">android:key=</span><span class="s3">&quot;notifications_new_message_ringtone&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;@string/pref_title_ringtone&quot;</span><span class="s0"> 
+        </span><span class="s2">android:ringtoneType=</span><span class="s3">&quot;notification&quot;</span><span class="s0"> 
+        </span><span class="s2">android:defaultValue=</span><span class="s3">&quot;content://settings/system/notification_sound&quot; </span><span class="s0">/&gt; 
+ 
+    </span><span class="s4">&lt;!-- NOTE: This preference will be enabled only when the checkbox above is checked. --&gt;</span><span class="s0"> 
+    &lt;</span><span class="s1">CheckBoxPreference</span><span class="s0"> 
+        </span><span class="s2">android:dependency=</span><span class="s3">&quot;notifications_new_message&quot;</span><span class="s0"> 
+        </span><span class="s2">android:key=</span><span class="s3">&quot;notifications_new_message_vibrate&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;@string/pref_title_vibrate&quot;</span><span class="s0"> 
+        </span><span class="s2">android:defaultValue=</span><span class="s3">&quot;true&quot; </span><span class="s0">/&gt; 
+ 
+&lt;/</span><span class="s1">PreferenceScreen</span><span class="s0">&gt; 
+</span></pre>
+</body>
+</html>

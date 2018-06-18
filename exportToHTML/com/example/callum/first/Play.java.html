@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Play.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Play.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">com.example.callum.first; 
+ 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.view.Menu; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.Button; 
+</span><span class="s0">import </span><span class="s1">android.widget.EditText; 
+</span><span class="s0">import </span><span class="s1">android.widget.ImageView; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+ 
+</span><span class="s0">import <a href="../../../../com/example/callum/first/util/Globalclass.java.html">com.example.callum.first.util.Globalclass</a></span><span class="s1">; 
+ 
+</span><span class="s0">public class </span><span class="s1">Play </span><span class="s0">extends </span><span class="s1">AppCompatActivity  </span><span class="s0">implements </span><span class="s1">View.OnClickListener { 
+    <a href="../../../../com/example/callum/first/util/Globalclass.java.html">Globalclass</a> g1 = </span><span class="s0">new <a href="../../../../com/example/callum/first/util/Globalclass.java.html">Globalclass</a></span><span class="s1">(); 
+    <a href="MainActivity.java.html">MainActivity</a> m1 = </span><span class="s0">new <a href="MainActivity.java.html">MainActivity</a></span><span class="s1">(); 
+    Button Submit; 
+    String hello; 
+    TextView display; 
+    TextView level; 
+    EditText their_Guess; 
+    ImageView VarImage; 
+    @Override 
+ 
+ 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+ 
+        g1.setAnswers(); 
+        g1.setLevel(</span><span class="s2">3</span><span class="s1">); 
+        hello=g1.getAnswer(); 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_play); 
+        Submit = (Button) findViewById(R.id.Submit_button); 
+        display= (TextView)findViewById(R.id.levele); 
+        level=(TextView)findViewById(R.id.levele); 
+        VarImage = (ImageView)findViewById(R.id.Var_Image); 
+ 
+        onBack(); 
+ 
+    } 
+ 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onCreateOptionsMenu(Menu menu) { 
+        </span><span class="s3">// Inflate the menu; this adds items to the action bar if it is present.</span><span class="s1"> 
+        getMenuInflater().inflate(R.menu.menu_play, menu); 
+        </span><span class="s0">return true</span><span class="s1">; 
+ 
+    } 
+ 
+</span><span class="s3">//    @Override</span><span class="s1"> 
+</span><span class="s3">//    public void onBackPressed(){</span><span class="s1"> 
+</span><span class="s3">//        startActivity(new Intent(&quot;android.intent.action.&quot;));</span><span class="s1"> 
+</span><span class="s3">//    }</span><span class="s1"> 
+ 
+    </span><span class="s0">private void </span><span class="s1">SubmitClick() { 
+ 
+        their_Guess =(EditText) findViewById(R.id.Guess_Box); 
+        </span><span class="s0">if</span><span class="s1">(their_Guess.getText().toString().equalsIgnoreCase(g1.getAnswer())){ 
+            g1.levelUp(); 
+            Submit.setTextColor(getResources().getColor(R.color.Black)); 
+            onBack(); 
+</span><span class="s3">//            startActivity(new Intent(&quot;android.intent.action.util.CORRECT&quot;));</span><span class="s1"> 
+ 
+        } </span><span class="s0">else </span><span class="s1">{ 
+ 
+ 
+            Submit.setTextColor(getResources().getColor(R.color.Red)); 
+        } 
+        their_Guess.setText(</span><span class="s4">&quot;&quot;</span><span class="s1">); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+        </span><span class="s0">switch </span><span class="s1">(v.getId()) { 
+            </span><span class="s0">case </span><span class="s1">R.id.Submit_button: 
+                SubmitClick(); 
+ 
+        } 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">onBack(){ 
+        Submit = (Button) findViewById(R.id.Submit_button); 
+        Submit.setOnClickListener(</span><span class="s0">this</span><span class="s1">); 
+        display= (TextView)findViewById(R.id.levele); 
+        display.setText(g1.getAnswer()); 
+        level=(TextView)findViewById(R.id.levele); 
+        level.setText(</span><span class="s4">&quot;Level: &quot; </span><span class="s1">+(g1.getLevel())); 
+ 
+ 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) { 
+        </span><span class="s3">// Handle action bar item clicks here. The action bar will</span><span class="s1"> 
+        </span><span class="s3">// automatically handle clicks on the Home/Up button, so long</span><span class="s1"> 
+        </span><span class="s3">// as you specify a parent activity in AndroidManifest.xml.</span><span class="s1"> 
+        </span><span class="s0">int </span><span class="s1">id = item.getItemId(); 
+ 
+ 
+        </span><span class="s3">//noinspection SimplifiableIfStatement</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(id == R.id.action_settings) { 
+            </span><span class="s0">return true</span><span class="s1">; 
+        } 
+ 
+        </span><span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item); 
+    } 
+} 
+</span></pre>
+</body>
+</html>

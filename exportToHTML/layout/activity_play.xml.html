@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>activity_play.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+.s1 { color: rgb(0,0,128); font-weight: bold; }
+.s2 { color: rgb(0,0,255); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+activity_play.xml</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;</span><span class="s1">RelativeLayout </span><span class="s2">xmlns:android=</span><span class="s3">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="s0"> 
+    </span><span class="s2">xmlns:tools=</span><span class="s3">&quot;http://schemas.android.com/tools&quot; </span><span class="s2">android:layout_width=</span><span class="s3">&quot;match_parent&quot;</span><span class="s0"> 
+    </span><span class="s2">android:layout_height=</span><span class="s3">&quot;match_parent&quot; </span><span class="s2">android:paddingLeft=</span><span class="s3">&quot;@dimen/activity_horizontal_margin&quot;</span><span class="s0"> 
+    </span><span class="s2">android:paddingRight=</span><span class="s3">&quot;@dimen/activity_horizontal_margin&quot;</span><span class="s0"> 
+    </span><span class="s2">android:paddingTop=</span><span class="s3">&quot;@dimen/activity_vertical_margin&quot;</span><span class="s0"> 
+    </span><span class="s2">android:paddingBottom=</span><span class="s3">&quot;@dimen/activity_vertical_margin&quot; </span><span class="s2">tools:context=</span><span class="s3">&quot;.Play&quot;</span><span class="s0"> 
+    </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/First&quot;</span><span class="s0">&gt;\ 
+ 
+    &lt;</span><span class="s1">TextView</span><span class="s0"> 
+        </span><span class="s2">android:layout_width=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_height=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:textAppearance=</span><span class="s3">&quot;?android:attr/textAppearanceLarge&quot;</span><span class="s0"> 
+        </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/level&quot;</span><span class="s0"> 
+        </span><span class="s2">android:text=</span><span class="s3">&quot;@string/Nothing&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_above=</span><span class="s3">&quot;@+id/Guess_Box&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentEnd=</span><span class="s3">&quot;true&quot; </span><span class="s0">/&gt; 
+ 
+    &lt;</span><span class="s1">TextView</span><span class="s0"> 
+        </span><span class="s2">android:layout_width=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_height=</span><span class="s3">&quot;36dp&quot;</span><span class="s0"> 
+        </span><span class="s2">android:textAppearance=</span><span class="s3">&quot;?android:attr/textAppearanceMedium&quot;</span><span class="s0"> 
+        </span><span class="s2">android:text=</span><span class="s3">&quot;@string/level&quot;</span><span class="s0"> 
+        </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/levele&quot;</span><span class="s0"> 
+        </span><span class="s2">android:textAlignment=</span><span class="s3">&quot;center&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_gravity=</span><span class="s3">&quot;bottom|left&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentTop=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_centerHorizontal=</span><span class="s3">&quot;true&quot; </span><span class="s0">/&gt; 
+ 
+    &lt;</span><span class="s1">EditText</span><span class="s0"> 
+        </span><span class="s2">android:layout_width=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_height=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Guess_Box&quot;</span><span class="s0"> 
+        </span><span class="s2">android:inputType=</span><span class="s3">&quot;text&quot;</span><span class="s0"> 
+        </span><span class="s2">android:hint=</span><span class="s3">&quot;Your Guess&quot;</span><span class="s0"> 
+        </span><span class="s2">android:enabled=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:editable=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:clickable=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:focusable=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:focusableInTouchMode=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:capitalize=</span><span class="s3">&quot;characters&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_weight=</span><span class="s3">&quot;1.01&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentBottom=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentStart=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_toLeftOf=</span><span class="s3">&quot;@+id/Submit_button&quot; </span><span class="s0">/&gt; 
+ 
+    &lt;</span><span class="s1">Button</span><span class="s0"> 
+        </span><span class="s2">android:layout_width=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_height=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:text=</span><span class="s3">&quot;submit&quot;</span><span class="s0"> 
+        </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Submit_button&quot;</span><span class="s0"> 
+        </span><span class="s2">android:enabled=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:onClick=</span><span class="s3">&quot;@string/title_activity_correct&quot;</span><span class="s0"> 
+        </span><span class="s2">android:focusableInTouchMode=</span><span class="s3">&quot;false&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentBottom=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentEnd=</span><span class="s3">&quot;true&quot; </span><span class="s0">/&gt; 
+ 
+    &lt;</span><span class="s1">ImageView</span><span class="s0"> 
+        </span><span class="s2">android:layout_width=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_height=</span><span class="s3">&quot;wrap_content&quot;</span><span class="s0"> 
+        </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Var_Image&quot;</span><span class="s0"> 
+        </span><span class="s2">android:src=</span><span class="s3">&quot;@drawable/pencil&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_centerVertical=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_centerHorizontal=</span><span class="s3">&quot;true&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignParentBottom=</span><span class="s3">&quot;false&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_above=</span><span class="s3">&quot;@+id/Guess_Box&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_below=</span><span class="s3">&quot;@+id/levele&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignLeft=</span><span class="s3">&quot;@+id/Guess_Box&quot;</span><span class="s0"> 
+        </span><span class="s2">android:layout_alignRight=</span><span class="s3">&quot;@+id/Submit_button&quot; </span><span class="s0">/&gt; 
+ 
+&lt;/</span><span class="s1">RelativeLayout</span><span class="s0">&gt;</span></pre>
+</body>
+</html>

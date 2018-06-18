@@ -1,0 +1,219 @@
+<html>
+<head>
+<title>SettingsActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(128,128,128); font-weight: bold; font-style: italic; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+.s5 { color: rgb(0,0,255); }
+.s6 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+SettingsActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">com.example.callum.first; 
+ 
+</span><span class="s0">import </span><span class="s1">android.annotation.TargetApi; 
+</span><span class="s0">import </span><span class="s1">android.content.Context; 
+</span><span class="s0">import </span><span class="s1">android.content.res.Configuration; 
+</span><span class="s0">import </span><span class="s1">android.media.Ringtone; 
+</span><span class="s0">import </span><span class="s1">android.media.RingtoneManager; 
+</span><span class="s0">import </span><span class="s1">android.net.Uri; 
+</span><span class="s0">import </span><span class="s1">android.os.Build; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.preference.ListPreference; 
+</span><span class="s0">import </span><span class="s1">android.preference.Preference; 
+</span><span class="s0">import </span><span class="s1">android.preference.PreferenceActivity; 
+</span><span class="s0">import </span><span class="s1">android.preference.PreferenceFragment; 
+</span><span class="s0">import </span><span class="s1">android.preference.PreferenceManager; 
+</span><span class="s0">import </span><span class="s1">android.preference.RingtonePreference; 
+</span><span class="s0">import </span><span class="s1">android.text.TextUtils; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.List; 
+ 
+ 
+</span><span class="s2">/** 
+ * A {</span><span class="s3">@link </span><span class="s2">PreferenceActivity} that presents a set of application settings. On 
+ * handset devices, settings are presented as a single list. On tablets, 
+ * settings are split by category, with category headers shown to the left of 
+ * the list of settings. 
+ * </span><span class="s4">&lt;p/&gt;</span><span class="s2"> 
+ * See </span><span class="s4">&lt;a href=&quot;http://developer.android.com/design/patterns/settings.html&quot;&gt;</span><span class="s2"> 
+ * Android Design: Settings</span><span class="s4">&lt;/a&gt; </span><span class="s2">for design guidelines and the </span><span class="s4">&lt;a</span><span class="s2"> 
+ * href=&quot;http://developer.android.com/guide/topics/ui/settings.html&quot;&gt;Settings 
+ * API Guide</span><span class="s4">&lt;/a&gt; </span><span class="s2">for more information on developing a Settings UI. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">SettingsActivity </span><span class="s0">extends </span><span class="s1">PreferenceActivity { 
+ 
+ 
+    </span><span class="s2">/** 
+     * {</span><span class="s3">@inheritDoc</span><span class="s2">} 
+     */</span><span class="s1"> 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onIsMultiPane() { 
+        </span><span class="s0">return </span><span class="s1">isXLargeTablet(</span><span class="s0">this</span><span class="s1">); 
+    } 
+ 
+    </span><span class="s2">/** 
+     * Helper method to determine if the device has an extra-large screen. For 
+     * example, 10&quot; tablets are extra-large. 
+     */</span><span class="s1"> 
+    </span><span class="s0">private static boolean </span><span class="s1">isXLargeTablet(Context context) { 
+        </span><span class="s0">return </span><span class="s1">(context.getResources().getConfiguration().screenLayout 
+                &amp; Configuration.SCREENLAYOUT_SIZE_MASK) &gt;= Configuration.SCREENLAYOUT_SIZE_XLARGE; 
+    } 
+ 
+ 
+    </span><span class="s2">/** 
+     * {</span><span class="s3">@inheritDoc</span><span class="s2">} 
+     */</span><span class="s1"> 
+    @Override 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
+    </span><span class="s0">public void </span><span class="s1">onBuildHeaders(List&lt;Header&gt; target) { 
+        loadHeadersFromResource(R.xml.pref_headers, target); 
+    } 
+ 
+    </span><span class="s2">/** 
+     * A preference value change listener that updates the preference's summary 
+     * to reflect its new value. 
+     */</span><span class="s1"> 
+    </span><span class="s0">private static </span><span class="s1">Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = </span><span class="s0">new </span><span class="s1">Preference.OnPreferenceChangeListener() { 
+        @Override 
+        </span><span class="s0">public boolean </span><span class="s1">onPreferenceChange(Preference preference, Object value) { 
+            String stringValue = value.toString(); 
+ 
+            </span><span class="s0">if </span><span class="s1">(preference </span><span class="s0">instanceof </span><span class="s1">ListPreference) { 
+                </span><span class="s2">// For list preferences, look up the correct display value in</span><span class="s1"> 
+                </span><span class="s2">// the preference's 'entries' list.</span><span class="s1"> 
+                ListPreference listPreference = (ListPreference) preference; 
+                </span><span class="s0">int </span><span class="s1">index = listPreference.findIndexOfValue(stringValue); 
+ 
+                </span><span class="s2">// Set the summary to reflect the new value.</span><span class="s1"> 
+                preference.setSummary( 
+                        index &gt;= </span><span class="s5">0</span><span class="s1"> 
+                                ? listPreference.getEntries()[index] 
+                                : </span><span class="s0">null</span><span class="s1">); 
+ 
+            } </span><span class="s0">else if </span><span class="s1">(preference </span><span class="s0">instanceof </span><span class="s1">RingtonePreference) { 
+                </span><span class="s2">// For ringtone preferences, look up the correct display value</span><span class="s1"> 
+                </span><span class="s2">// using RingtoneManager.</span><span class="s1"> 
+                </span><span class="s0">if </span><span class="s1">(TextUtils.isEmpty(stringValue)) { 
+                    </span><span class="s2">// Empty values correspond to 'silent' (no ringtone).</span><span class="s1"> 
+                    preference.setSummary(R.string.pref_ringtone_silent); 
+ 
+                } </span><span class="s0">else </span><span class="s1">{ 
+                    Ringtone ringtone = RingtoneManager.getRingtone( 
+                            preference.getContext(), Uri.parse(stringValue)); 
+ 
+                    </span><span class="s0">if </span><span class="s1">(ringtone == </span><span class="s0">null</span><span class="s1">) { 
+                        </span><span class="s2">// Clear the summary if there was a lookup error.</span><span class="s1"> 
+                        preference.setSummary(</span><span class="s0">null</span><span class="s1">); 
+                    } </span><span class="s0">else </span><span class="s1">{ 
+                        </span><span class="s2">// Set the summary to reflect the new ringtone display</span><span class="s1"> 
+                        </span><span class="s2">// name.</span><span class="s1"> 
+                        String name = ringtone.getTitle(preference.getContext()); 
+                        preference.setSummary(name); 
+                    } 
+                } 
+ 
+            } </span><span class="s0">else </span><span class="s1">{ 
+                </span><span class="s2">// For all other preferences, set the summary to the value's</span><span class="s1"> 
+                </span><span class="s2">// simple string representation.</span><span class="s1"> 
+                preference.setSummary(stringValue); 
+            } 
+            </span><span class="s0">return true</span><span class="s1">; 
+        } 
+    }; 
+ 
+    </span><span class="s2">/** 
+     * Binds a preference's summary to its value. More specifically, when the 
+     * preference's value is changed, its summary (line of text below the 
+     * preference title) is updated to reflect the value. The summary is also 
+     * immediately updated upon calling this method. The exact display format is 
+     * dependent on the type of preference. 
+     * 
+     * </span><span class="s3">@see </span><span class="s2">#sBindPreferenceSummaryToValueListener 
+     */</span><span class="s1"> 
+    </span><span class="s0">private static void </span><span class="s1">bindPreferenceSummaryToValue(Preference preference) { 
+        </span><span class="s2">// Set the listener to watch for value changes.</span><span class="s1"> 
+        preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener); 
+ 
+        </span><span class="s2">// Trigger the listener immediately with the preference's</span><span class="s1"> 
+        </span><span class="s2">// current value.</span><span class="s1"> 
+        sBindPreferenceSummaryToValueListener.onPreferenceChange(preference, 
+                PreferenceManager 
+                        .getDefaultSharedPreferences(preference.getContext()) 
+                        .getString(preference.getKey(), </span><span class="s6">&quot;&quot;</span><span class="s1">)); 
+    } 
+ 
+    </span><span class="s2">/** 
+     * This fragment shows general preferences only. It is used when the 
+     * activity is showing a two-pane settings UI. 
+     */</span><span class="s1"> 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
+    </span><span class="s0">public static class </span><span class="s1">GeneralPreferenceFragment </span><span class="s0">extends </span><span class="s1">PreferenceFragment { 
+        @Override 
+        </span><span class="s0">public void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+            </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+            addPreferencesFromResource(R.xml.pref_general); 
+ 
+            </span><span class="s2">// Bind the summaries of EditText/List/Dialog/Ringtone preferences</span><span class="s1"> 
+            </span><span class="s2">// to their values. When their values change, their summaries are</span><span class="s1"> 
+            </span><span class="s2">// updated to reflect the new value, per the Android Design</span><span class="s1"> 
+            </span><span class="s2">// guidelines.</span><span class="s1"> 
+            bindPreferenceSummaryToValue(findPreference(</span><span class="s6">&quot;example_text&quot;</span><span class="s1">)); 
+            bindPreferenceSummaryToValue(findPreference(</span><span class="s6">&quot;example_list&quot;</span><span class="s1">)); 
+        } 
+    } 
+ 
+    </span><span class="s2">/** 
+     * This fragment shows notification preferences only. It is used when the 
+     * activity is showing a two-pane settings UI. 
+     */</span><span class="s1"> 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
+    </span><span class="s0">public static class </span><span class="s1">NotificationPreferenceFragment </span><span class="s0">extends </span><span class="s1">PreferenceFragment { 
+        @Override 
+        </span><span class="s0">public void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+            </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+            addPreferencesFromResource(R.xml.pref_notification); 
+ 
+            </span><span class="s2">// Bind the summaries of EditText/List/Dialog/Ringtone preferences</span><span class="s1"> 
+            </span><span class="s2">// to their values. When their values change, their summaries are</span><span class="s1"> 
+            </span><span class="s2">// updated to reflect the new value, per the Android Design</span><span class="s1"> 
+            </span><span class="s2">// guidelines.</span><span class="s1"> 
+            bindPreferenceSummaryToValue(findPreference(</span><span class="s6">&quot;notifications_new_message_ringtone&quot;</span><span class="s1">)); 
+        } 
+    } 
+ 
+    </span><span class="s2">/** 
+     * This fragment shows data and sync preferences only. It is used when the 
+     * activity is showing a two-pane settings UI. 
+     */</span><span class="s1"> 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
+    </span><span class="s0">public static class </span><span class="s1">DataSyncPreferenceFragment </span><span class="s0">extends </span><span class="s1">PreferenceFragment { 
+        @Override 
+        </span><span class="s0">public void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+            </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+            addPreferencesFromResource(R.xml.pref_data_sync); 
+ 
+            </span><span class="s2">// Bind the summaries of EditText/List/Dialog/Ringtone preferences</span><span class="s1"> 
+            </span><span class="s2">// to their values. When their values change, their summaries are</span><span class="s1"> 
+            </span><span class="s2">// updated to reflect the new value, per the Android Design</span><span class="s1"> 
+            </span><span class="s2">// guidelines.</span><span class="s1"> 
+            bindPreferenceSummaryToValue(findPreference(</span><span class="s6">&quot;sync_frequency&quot;</span><span class="s1">)); 
+        } 
+    } 
+} 
+</span></pre>
+</body>
+</html>

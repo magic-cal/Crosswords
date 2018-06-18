@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>AndroidManifest.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { font-style: italic; }
+.s1 { color: rgb(0,0,255); font-weight: bold; }
+.s2 { }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,128); font-weight: bold; }
+.s5 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+AndroidManifest.xml</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;?</span><span class="s1">xml version=</span><span class="s3">&quot;1.0&quot; </span><span class="s1">encoding=</span><span class="s3">&quot;utf-8&quot;</span><span class="s0">?&gt;</span><span class="s2"> 
+&lt;</span><span class="s4">manifest </span><span class="s1">xmlns:android=</span><span class="s3">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="s2"> 
+    </span><span class="s1">package=</span><span class="s3">&quot;com.example.callum.first&quot; </span><span class="s2">&gt; 
+    </span><span class="s5">&lt;!--Updated on the 18th at 2.11--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot; /&gt;--&gt;</span><span class="s2"> 
+ 
+    </span><span class="s5">&lt;!--&amp;lt;!&amp;ndash; To access Google+ APIs: &amp;ndash;&amp;gt;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&amp;lt;!&amp;ndash;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--option is required to comply with the Google+ Sign-In developer policies--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&amp;ndash;&amp;gt;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&lt;uses-permission android:name=&quot;android.permission.USE_CREDENTIALS&quot; /&gt; &amp;lt;!&amp;ndash; To retrieve the account name (email) as part of sign-in: &amp;ndash;&amp;gt;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&lt;uses-permission android:name=&quot;android.permission.GET_ACCOUNTS&quot; /&gt; &amp;lt;!&amp;ndash; To auto-complete the email text field in the login form with the user's emails &amp;ndash;&amp;gt;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&lt;uses-permission android:name=&quot;android.permission.READ_PROFILE&quot; /&gt;--&gt;</span><span class="s2"> 
+    </span><span class="s5">&lt;!--&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot; /&gt;--&gt;</span><span class="s2"> 
+ 
+    &lt;</span><span class="s4">application</span><span class="s2"> 
+        </span><span class="s1">android:allowBackup=</span><span class="s3">&quot;true&quot;</span><span class="s2"> 
+        </span><span class="s1">android:icon=</span><span class="s3">&quot;@drawable/pencil&quot;</span><span class="s2"> 
+        </span><span class="s1">android:label=</span><span class="s3">&quot;@string/app_name&quot;</span><span class="s2"> 
+        </span><span class="s1">android:theme=</span><span class="s3">&quot;@style/AppTheme&quot; </span><span class="s2">&gt; 
+        &lt;</span><span class="s4">activity</span><span class="s2"> 
+            </span><span class="s1">android:name=</span><span class="s3">&quot;.MainActivity&quot;</span><span class="s2"> 
+            </span><span class="s1">android:label=</span><span class="s3">&quot;@string/app_name&quot; </span><span class="s2">&gt; 
+            &lt;</span><span class="s4">intent-filter</span><span class="s2">&gt; 
+                &lt;</span><span class="s4">action </span><span class="s1">android:name=</span><span class="s3">&quot;android.intent.action.MAIN&quot; </span><span class="s2">/&gt; 
+                //MAIN 
+                &lt;</span><span class="s4">category </span><span class="s1">android:name=</span><span class="s3">&quot;android.intent.category.LAUNCHER&quot; </span><span class="s2">/&gt; 
+            &lt;/</span><span class="s4">intent-filter</span><span class="s2">&gt; 
+        &lt;/</span><span class="s4">activity</span><span class="s2">&gt; 
+        &lt;</span><span class="s4">activity</span><span class="s2"> 
+            </span><span class="s1">android:name=</span><span class="s3">&quot;.Play&quot;</span><span class="s2"> 
+            </span><span class="s1">android:label=</span><span class="s3">&quot;@string/title_activity_play&quot; </span><span class="s2">&gt; 
+            &lt;</span><span class="s4">intent-filter</span><span class="s2">&gt; 
+                &lt;</span><span class="s4">action </span><span class="s1">android:name=</span><span class="s3">&quot;android.intent.action.PLAY&quot; </span><span class="s2">/&gt; 
+                //PLAY 
+                &lt;</span><span class="s4">category </span><span class="s1">android:name=</span><span class="s3">&quot;android.intent.category.DEFAULT&quot; </span><span class="s2">/&gt; 
+            &lt;/</span><span class="s4">intent-filter</span><span class="s2">&gt; 
+        &lt;/</span><span class="s4">activity</span><span class="s2">&gt; 
+ 
+        &lt;</span><span class="s4">meta-data</span><span class="s2"> 
+            </span><span class="s1">android:name=</span><span class="s3">&quot;com.google.android.gms.version&quot;</span><span class="s2"> 
+            </span><span class="s1">android:value=</span><span class="s3">&quot;@integer/google_play_services_version&quot; </span><span class="s2">/&gt; 
+ 
+        </span><span class="s5">&lt;!--&lt;activity--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:name=&quot;.util.Correct&quot;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:label=&quot;@string/title_activity_correct&quot;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:parentActivityName=&quot;.Play&quot; &gt;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--&lt;intent-filter&gt;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--&lt;action android:name=&quot;android.intent.action.util.CORRECT&quot; /&gt;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--// CORRECT--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--&lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--&lt;/intent-filter&gt;--&gt;</span><span class="s2"> 
+ 
+        </span><span class="s5">&lt;!--&lt;meta-data--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:name=&quot;android.support.PARENT_ACTIVITY&quot;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:value=&quot;com.example.callum.first.Play&quot; /&gt;--&gt;</span><span class="s2"> 
+ 
+        </span><span class="s5">&lt;!--&lt;activity--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:name=&quot;.enlarge&quot;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:label=&quot;@string/title_activity_enlarge&quot;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:parentActivityName=&quot;.Play&quot; &gt;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--&lt;meta-data--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:name=&quot;android.support.PARENT_ACTIVITY&quot;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--android:value=&quot;com.example.callum.first.Play&quot; /&gt;--&gt;</span><span class="s2"> 
+        </span><span class="s5">&lt;!--&lt;/activity&gt;--&gt;</span><span class="s2"> 
+    &lt;/</span><span class="s4">application</span><span class="s2">&gt; 
+ 
+&lt;/</span><span class="s4">manifest</span><span class="s2">&gt; 
+</span></pre>
+</body>
+</html>

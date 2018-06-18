@@ -1,6 +1,8 @@
 # Crosswords
 A crossword app for on the go Android crosswords.
 
+### For further reference see: userManual
+
 The app CrossWords is designed for streamlined and easy access to crosswords on the go. It provides a whole database of different crosswords to play and clever monitoring system to see how quickly you completed the crossword and how many goes it took you. The app allows many users to play on the same device and yet it will still remember where the previous user was in the crossword. The app makes doing crosswords on the go easier and less frustrating than carrying a newspaper/ crossword book and pen. The app allows users to guess at clues within a crossword whist still having the added benefit of the crossword grid to help them to figure out the other blanks. This is a mobile game for entertainment purposes and will therefore make it easy to know when your answer is right or wrong.
 
 ## Required for installation:
